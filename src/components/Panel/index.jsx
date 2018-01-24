@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
+import './Panel.css'
 
 class Panel extends Component {
   constructor(props) {
     super(props)
     this.state = {
       open: false,
+      active: false,
       name: this.props.name,
     }
   }
   toggleOpen() {
     this.setState({ open: !this.state.open })
   }
-  toggleActive(e) {
-    if (e.propertyName.includes("flex")) {
-      this.classList.toggle("open-active")
-    }
+  toggleActive() {
+    this.state.open ? this.setState({ active: true }) : this.setState({ active: false })
   }
   render() {
-    const {name, open} = this.state
+    const { name, open, active } = this.state
     return (
-      <div className={`panel ${name} ${open ? 'open' : ''}`}
-        onClick={this.toggleOpen.bind(this)}>
+      <div className={`panel ${name} ${open ? 'open' : ''} ${active ? 'open-active' : ''}`}
+        onClick={this.toggleOpen.bind(this)} onTransitionEnd={this.toggleActive.bind(this)}>
         {this.props.children}
       </div>
     )

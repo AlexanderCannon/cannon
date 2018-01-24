@@ -1,0 +1,23 @@
+.panel-a {
+  background-image: url('../../images/homepage1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.panel-b {
+  background-image: url('../../images/homepage2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.panel-c {
+  background-image: url('../../images/homepage3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.panel-d {
+  background-image: url('../../images/homepage4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
